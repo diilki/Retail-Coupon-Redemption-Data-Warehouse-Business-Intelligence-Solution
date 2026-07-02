@@ -1,0 +1,8 @@
+category_id,category_name
+1,Grocery
+2,Pharmaceutical
+3,Bakery
+4,Cosmetics
+5,Packaged Food
+6,Electronics
+7,Home Decor
