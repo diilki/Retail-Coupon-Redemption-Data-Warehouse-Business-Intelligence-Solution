@@ -336,8 +336,6 @@ Retail-Coupon-Redemption-DWBI/
 ├── sql/
 ├── ssis/
 ├── ssas/
-├── powerbi/
-├── screenshots/
 ├── README.md
 └── .gitignore
 ```
