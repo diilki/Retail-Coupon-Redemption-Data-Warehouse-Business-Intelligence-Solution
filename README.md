@@ -1,366 +1,387 @@
-# Retail-Coupon-Redemption-Data-Warehouse-Business-Intelligence-Solution
-<div align="center">
+# 🚀 Retail Coupon Redemption Data Warehouse
 
-# 🚀 Retail Coupon Redemption Data Warehouse & Business Intelligence
-
-### 📊 End-to-End Enterprise Data Warehouse Solution
-
-Transforming **Retail Coupon Redemption Data** into meaningful business insights using the **Microsoft Business Intelligence Stack**.
+End-to-end **Data Warehouse & Business Intelligence** solution built using **SQL Server, SSIS, SSAS, and Power BI** for Retail Coupon Redemption Analytics.
 
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white)
 ![SSIS](https://img.shields.io/badge/SSIS-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![SSAS](https://img.shields.io/badge/SSAS-512BD4?style=for-the-badge&logo=microsoft&logoColor=white)
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
 ---
 
-### ⭐ Enterprise Data Warehouse | ETL | OLAP | Business Intelligence
+# 📖 Project Overview
 
-</div>
+This project demonstrates the design and implementation of a complete **Data Warehouse and Business Intelligence (DWBI)** solution for a **Retail Coupon Redemption** system.
 
----
+The solution transforms raw operational data collected from multiple heterogeneous data sources into a centralized dimensional data warehouse capable of supporting enterprise-level analytics and business intelligence.
 
-# 📖 Overview
+The project includes:
 
-This project demonstrates the implementation of a complete **Data Warehouse & Business Intelligence Solution** using the Microsoft BI ecosystem.
+✅ ETL Development using SSIS
 
-The project converts raw operational retail data into a centralized analytical warehouse capable of delivering powerful business insights through interactive dashboards and OLAP analysis.
+✅ Snowflake Schema Design
 
-✨ **Key Highlights**
+✅ Historical Data Tracking (SCD Type 2)
 
-- 🏗 Enterprise Data Warehouse
-- 🔄 Automated ETL Pipelines
-- 📊 Business Intelligence Reporting
-- 📈 Interactive Power BI Dashboards
-- 🧠 SSAS Cube Development
-- 📚 Historical Data Tracking (SCD Type 2)
-- ⚡ Accumulating Fact Tables
+✅ Accumulating Fact Table
+
+✅ SSAS OLAP Cube Development
+
+✅ Interactive Power BI Dashboards
 
 ---
 
-# 📂 Dataset
+# 📊 Dataset Information
 
-This project uses the **Predicting Coupon Redemption Feature Selection** dataset from Kaggle.
+This project uses the **Predicting Coupon Redemption Feature Selection** dataset available on Kaggle.
 
-It contains retail transaction data including:
+The dataset simulates the marketing operations of a retail organization where promotional campaigns and coupons are used to increase customer engagement and sales.
 
-| Dataset |
-|----------|
-| 👥 Customers |
-| 🎯 Campaigns |
-| 🎟 Coupon Redemption |
-| 📦 Products |
-| 🛍 Transactions |
-| 🏷 Product Brands |
-| 📂 Categories |
+The dataset was transformed into a complete enterprise data warehouse through multiple ETL stages, dimensional modeling, OLAP cube development, and business intelligence reporting.
 
 ---
 
-# 🏛 Solution Architecture
+## Dataset Contents
 
-```text
-                   ┌────────────────────┐
-                   │ Source Files       │
-                   │ CSV • Excel • TXT  │
-                   └─────────┬──────────┘
-                             │
-                             ▼
-                   ┌────────────────────┐
-                   │ Source Database    │
-                   └─────────┬──────────┘
-                             │
-                             ▼
-                   ┌────────────────────┐
-                   │ Staging Database   │
-                   │ Data Cleansing     │
-                   └─────────┬──────────┘
-                             │
-                             ▼
-                 ┌────────────────────────┐
-                 │ Data Warehouse         │
-                 │ Snowflake Schema       │
-                 └─────────┬──────────────┘
-                           │
-                  ┌────────┴────────┐
-                  ▼                 ▼
-          ┌─────────────┐    ┌──────────────┐
-          │ SSAS Cube   │    │ Power BI     │
-          │ OLAP Engine │    │ Dashboards   │
-          └─────────────┘    └──────────────┘
-```
+👥 Customers
+
+🎯 Campaigns
+
+🎟 Coupon Redemption
+
+📦 Products
+
+🏷 Product Brands
+
+📂 Product Categories
+
+🛒 Customer Transactions
+
+📍 Customer Addresses
 
 ---
 
-# 📊 Data Flow
+## Dataset Source
 
-```mermaid
-flowchart LR
+Dataset available on Kaggle
 
-A[CSV Files]
-B[Excel Files]
-C[Text Files]
-D[SQL Database]
-
-A --> E[Source Layer]
-B --> E
-C --> E
-D --> E
-
-E --> F[Staging Area]
-
-F --> G[Data Warehouse]
-
-G --> H[SSAS Cube]
-
-G --> I[Power BI Dashboard]
-```
+🔗 https://www.kaggle.com/datasets
 
 ---
 
-# ⭐ Data Warehouse Design
+## Source Files Used
 
-✔ Snowflake Schema
+CouponCustomerAddress.xlsx
 
-### Dimensions
+CouponItemCategory.txt
 
-- 👤 DimCustomer
-- 📅 DimDate
-- 🎯 DimCampaign
-- 🎟 DimCouponRedemption
-- 📦 DimItem
-- 🏷 DimProductBrand
-- 📂 DimCategory
+CampaignData.csv
 
-### Fact
+CouponRedemp.csv
 
-🛒 FactTransaction
+Customer_Info.csv
 
----
+Items.csv
 
-# 🔄 ETL Pipeline
+ProductBrand.csv
 
-Developed using **SQL Server Integration Services (SSIS)**
+Customer_ItemTransaction.csv
 
-### Workflow
-
-```text
-Extract
-   ↓
-Validate
-   ↓
-Transform
-   ↓
-Clean
-   ↓
-Load Staging
-   ↓
-Load Warehouse
-```
-
-Features
-
-✅ Data Cleansing
-
-✅ Lookup Transformations
-
-✅ Merge Join
-
-✅ Derived Columns
-
-✅ Conditional Split
-
-✅ Execute SQL Tasks
+The data was extracted from Excel, CSV, Text files, and SQL Server before being loaded into the staging database and finally transformed into the Data Warehouse.
 
 ---
 
-# 📚 Slowly Changing Dimension (Type 2)
+# 🏗️ Solution Architecture
 
-Customer Dimension tracks historical changes using
+<p align="center">
+<img src="screenshots/solution_architecture.png" width="900">
+</p>
+
+---
+
+## Data Flow
 
 ```
-Customer
-
-Version 1
-StartDate
-EndDate
-IsCurrent
-
-↓
-
-Customer Address Changed
-
-↓
-
-Version 2
-StartDate
-EndDate
-IsCurrent
+Excel Files
+CSV Files
+Text Files
+SQL Database
+      │
+      ▼
+Source Database
+      │
+      ▼
+Staging Database
+      │
+      ▼
+Data Warehouse
+(Snowflake Schema)
+      │
+      ▼
+SSAS Cube
+      │
+      ▼
+Power BI Reports
 ```
-
----
-
-# ⚡ Accumulating Fact Table
-
-Tracks transaction lifecycle
-
-```
-Transaction Created
-
-↓
-
-Processing
-
-↓
-
-Completed
-
-↓
-
-Processing Time Calculated
-```
-
-Columns
-
-- Transaction Create Time
-- Completion Time
-- Processing Hours
-
----
-
-# 🧠 SSAS Cube
-
-Supported OLAP Operations
-
-✅ Roll-up
-
-✅ Drill-down
-
-✅ Slice
-
-✅ Dice
-
-✅ Pivot
-
----
-
-# 📈 Power BI Dashboards
-
-Included reports
-
-📊 Matrix Report
-
-📊 Multiple Slicers
-
-📊 Drill Down
-
-📊 Drill Through
-
-Features
-
-- KPI Monitoring
-- Customer Analysis
-- Coupon Analysis
-- Sales Trends
-- Interactive Filters
 
 ---
 
 # 🛠 Technology Stack
 
-| Tool | Purpose |
-|------|----------|
-| SQL Server | Database |
-| SSIS | ETL |
-| SSAS | OLAP |
-| Power BI | Dashboard |
-| SSMS | SQL Development |
-| Visual Studio | BI Development |
+| Category | Technology |
+|------------|------------|
+| Database | SQL Server |
+| ETL | SSIS |
+| Data Warehouse | Snowflake Schema |
+| OLAP | SSAS |
+| Visualization | Power BI |
+| Development | Visual Studio, SSMS |
 
 ---
 
-# 📁 Project Structure
+# 📂 Data Sources
+
+The project integrates multiple source formats.
+
+📊 Excel Files (.xlsx)
+
+📄 CSV Files (.csv)
+
+📝 Text Files (.txt)
+
+🗄 SQL Server Database
+
+This simulates a real-world enterprise data engineering environment where data originates from multiple operational systems.
+
+---
+
+# ⭐ Data Warehouse Design
+
+<p align="center">
+<img src="screenshots/snowflake_schema.png" width="850">
+</p>
+
+The warehouse follows a **Snowflake Schema** to reduce redundancy while maintaining analytical performance.
+
+---
+
+## Dimension Tables
+
+👤 DimCustomer *(SCD Type 2)*
+
+📅 DimDate
+
+🎯 DimCampaign
+
+🎟 DimCouponRedemption
+
+📦 DimItem
+
+🏷 DimProductBrand
+
+📂 DimCategory
+
+---
+
+## Fact Table
+
+🛒 FactTransaction *(Accumulating Fact Table)*
+
+---
+
+# 🔄 ETL Pipeline (SSIS)
+
+The ETL solution was developed using SQL Server Integration Services.
+
+---
+
+## SSIS Packages
+
+📥 Coupon_Load_Staging
+
+Loads source data into staging tables.
+
+🏗 Coupon_Load_DW
+
+Loads dimensions and fact tables into the warehouse.
+
+🔄 Coupon_Update_FactTransaction
+
+Updates transaction completion timestamps and processing duration.
+
+---
+
+# 📈 Slowly Changing Dimensions (SCD Type 2)
+
+Historical tracking was implemented for:
+
+👤 DimCustomer
+
+Tracked attributes include
+
+- StartDate
+- EndDate
+- IsCurrent
+
+This preserves customer history and enables accurate historical reporting.
+
+---
+
+# ⚡ Accumulating Fact Table
+
+The FactTransaction table supports transaction lifecycle analysis.
+
+Tracked metrics include
+
+- Transaction Create Time
+- Transaction Completion Time
+- Processing Duration
+
+This enables monitoring of operational performance and transaction processing efficiency.
+
+---
+
+# 🧠 OLAP Cube Development (SSAS)
+
+The OLAP Cube was developed using SQL Server Analysis Services.
+
+---
+
+## Cube Dimensions
+
+👤 Customer
+
+📦 Item
+
+📅 Date
+
+🎟 Coupon Redemption
+
+---
+
+## Measures
+
+💰 Total Discounted Expense
+
+📊 Transaction Metrics
+
+---
+
+## Supported OLAP Operations
+
+✅ Roll-Up
+
+✅ Drill-Down
+
+✅ Slice
+
+✅ Dice
+
+✅ Pivot Analysis
+
+---
+
+# 📊 Power BI Dashboards
+
+The Data Warehouse was visualized using Microsoft Power BI.
+
+Implemented reports include
+
+📌 Matrix Report
+
+📌 Multiple Slicer Dashboard
+
+📌 Drill Down Report
+
+📌 Drill Through Report
+
+<p align="center">
+<img src="screenshots/powerbi_dashboard.png" width="900">
+</p>
+
+---
+
+## Dashboard Features
+
+📈 Interactive Filtering
+
+📊 KPI Monitoring
+
+📅 Trend Analysis
+
+👥 Customer Analysis
+
+🎟 Coupon Redemption Analysis
+
+💰 Business Performance Insights
+
+---
+
+# 🗺 Entity Relationship Diagram
+
+<p align="center">
+<img src="screenshots/ER_Diagram.png" width="900">
+</p>
+
+---
+
+# 📁 Repository Structure
 
 ```
-Retail-Coupon-DWBI/
-
+Retail-Coupon-Redemption-DWBI/
 │
-
 ├── datasets/
-
 ├── documentation/
-
 ├── sql/
-
 ├── ssis/
-
 ├── ssas/
-
 ├── powerbi/
-
 ├── screenshots/
-
 ├── README.md
-
-└── LICENSE
+└── .gitignore
 ```
 
 ---
 
-# 📸 Project Screenshots
+# 📚 Documentation
 
-## 🏗 Architecture
+Detailed project documentation can be found in:
 
-```
-screenshots/architecture.png
-```
+📄 01_Data_Warehouse_Design_and_ETL_Report.pdf
 
-## ⭐ Snowflake Schema
-
-```
-screenshots/schema.png
-```
-
-## 🔄 SSIS Package
-
-```
-screenshots/ssis-package.png
-```
-
-## 🧠 SSAS Cube
-
-```
-screenshots/ssas-cube.png
-```
-
-## 📊 Power BI Dashboard
-
-```
-screenshots/dashboard.png
-```
+📄 02_SSAS_OLAP_and_PowerBI_Report.pdf
 
 ---
 
-# 🎯 Skills Demonstrated
+# 🎯 Key Skills Demonstrated
 
 - Data Warehousing
-- ETL Development
-- SQL Server
-- SSIS
-- SSAS
-- Power BI
-- OLAP
-- Data Modeling
-- Snowflake Schema
-- SCD Type 2
 - Business Intelligence
+- SQL Server
+- ETL Development
+- SSIS Package Development
+- Snowflake Schema Design
+- SCD Type 2
+- Accumulating Fact Tables
+- SSAS Cube Development
+- OLAP Analysis
+- Power BI Dashboard Development
+- Data Modeling
+- SQL
 
 ---
 
-<div align="center">
+# 👩‍💻 Author
 
-## ⭐ If you like this project, give it a Star ⭐
+**Dilki Shanika**
 
-Made with ❤️ using Microsoft Business Intelligence Stack
+🎓 BSc (Hons) in Information Technology – Data Science Specialization
 
-</div>
+🏛 Sri Lanka Institute of Information Technology (SLIIT)
+
+💡 Aspiring Data Engineer | Data Analyst | Business Intelligence Enthusiast
+
+---
+
+⭐ If you found this project interesting, feel free to explore the repository, documentation, and dashboards. Don't forget to **Star ⭐ this repository** if you found it useful!
