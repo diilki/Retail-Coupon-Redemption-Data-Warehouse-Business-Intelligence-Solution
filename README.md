@@ -321,7 +321,7 @@ Implemented reports include
 # 🗺 Entity Relationship Diagram
 
 <p align="center">
-<img src="Images/ER_Diagram.png." width="900">
+<img src="Images/ER_Diagram.png" width="900">
 </p>
 
 ---
