@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-6LDHGCN_MSSQLSERVER2.Coupon_DW"
+  DTS:DTSID="{7B0FB7A5-7B20-4197-B21D-9B07D69A588E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-6LDHGCN\MSSQLSERVER2;Initial Catalog=Coupon_DW;Provider=SQLOLEDB.1;Integrated Security=SSPI;Application Name=SSIS-Load Stage to the Warehouse-{7B0FB7A5-7B20-4197-B21D-9B07D69A588E}DESKTOP-6LDHGCN\MSSQLSERVER2.Coupon_DW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

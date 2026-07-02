@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/29/2026 11:02:17 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-6LDHGCN"
+  DTS:CreatorName="DESKTOP-6LDHGCN\SHANIKA"
+  DTS:DTSID="{C975A305-1EA7-48B1-B3F5-575FE6DB7D7D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{F15ADD9D-2597-4617-A3ED-C6BE9FE8DEC2}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Update FactTransaction Completion"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1A7D0A1F-A3C8-40DA-BFEC-33CCB4D0769E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update FactTransaction Completion"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7B0FB7A5-7B20-4197-B21D-9B07D69A588E}"
+          SQLTask:SqlStatementSource="UPDATE f&#xA;SET&#xA;    f.accm_txn_complete_time = s.accm_txn_complete_time,&#xA;    f.txn_process_time_hours =&#xA;        DATEDIFF(MINUTE, f.accm_txn_create_time, s.accm_txn_complete_time) / 60.0,&#xA;    f.ModifiedDate = GETDATE()&#xA;FROM Coupon_DW.dbo.FactTransaction f&#xA;INNER JOIN Coupon_Staging.dbo.Stg_FactTransactionCompletion s&#xA;    ON f.TransactionAlternateID = s.txn_id&#xA;WHERE s.accm_txn_complete_time IS NOT NULL;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="244.8,41.6"
+          Id="Package\Update FactTransaction Completion"
+          TopLeft="63.3333298729527,55.4666662809584" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
