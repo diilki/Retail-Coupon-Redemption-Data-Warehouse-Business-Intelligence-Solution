@@ -95,7 +95,7 @@ The data was extracted from Excel, CSV, Text files, and SQL Server before being 
 # 🏗️ Solution Architecture
 
 <p align="center">
-<img src="Images/solution_architecture.png" width="900">
+<img src="Images/solution_architecture.png.png" width="900">
 </p>
 
 ---
@@ -159,7 +159,7 @@ This simulates a real-world enterprise data engineering environment where data o
 # ⭐ Data Warehouse Design
 
 <p align="center">
-<img src="Images/snowflake_schema.png" width="850">
+<img src="Images/snowflake_schema.png.jpg" width="850">
 </p>
 
 The warehouse follows a **Snowflake Schema** to reduce redundancy while maintaining analytical performance.
@@ -321,7 +321,7 @@ Implemented reports include
 # 🗺 Entity Relationship Diagram
 
 <p align="center">
-<img src="Images/ER_Diagram.png" width="900">
+<img src="Images/ER_Diagram.png.jpg" width="900">
 </p>
 
 ---
