@@ -332,7 +332,7 @@ Implemented reports include
 Retail-Coupon-Redemption-DWBI/
 │
 ├── datasets/
-├── documentation/
+├── docs/
 ├── sql/
 ├── ssis/
 ├── ssas/
